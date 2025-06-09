@@ -1,4 +1,4 @@
-# 📂 University Library gRPC API
+# 📂 Universite Kütüphane Işlemleri gRPC API
 
 Bu proje, bir üniversitenin çevrim içi kütüphane sistemi için geliştirilmiş bir gRPC sunucu ve istemci uygulamasıdır.
 Protocol Buffers (protobuf) ile tanımlanan API yapısı üzerinden çalışır.
