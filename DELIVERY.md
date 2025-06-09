@@ -67,14 +67,4 @@ python src/client/client.py
 
 ---
 
-## ⚠️ Kontrol Listesi
-
-* [x] Stub dosyaları GitHub reposuna eklenmedi
-* [x] grpcurl komutları test belgesinde yer alıyor
-* [x] Ekran görüntüleri test belgesine eklendi
-* [x] Tüm servisler çalışır durumda
-* [x] README.md içinde yeterli açıklama var
-
----
-
 
