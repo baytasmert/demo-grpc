@@ -1,0 +1,24 @@
+# Python derleme çıktıları
+__pycache__/
+*.py[cod]
+*.pyo
+
+# gRPC stub dosyaları (build ile üretilecek)
+src/university_pb2.py
+src/university_pb2_grpc.py
+
+# Sanal ortam
+venv/
+.venv/
+
+# IDE/editor klasörleri
+.vscode/
+.idea/
+
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Log dosyaları / geçici dosyalar
+*.log
+*.tmp

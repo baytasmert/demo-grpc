@@ -1,0 +1,118 @@
+syntax = "proto3";
+
+package university;
+
+option go_package = "universitypb";
+
+// ENUM for Loan Status
+enum LoanStatus {
+  ONGOING = 0;
+  RETURNED = 1;
+  LATE = 2;
+}
+
+// MESSAGE DEFINITIONS
+message Book {
+  string id = 1;
+  string title = 2;
+  string author = 3;
+  string isbn = 4;
+  string publisher = 5;
+  int32 pageCount = 6;
+  int32 stock = 7;
+}
+
+message Student {
+  string id = 1;
+  string name = 2;
+  string studentNumber = 3;
+  string email = 4;
+  bool isActive = 5;
+}
+
+message Loan {
+  string id = 1;
+  string studentId = 2;
+  string bookId = 3;
+  string loanDate = 4;
+  string returnDate = 5;
+  LoanStatus status = 6;
+}
+
+// REQUEST / RESPONSE WRAPPERS
+message BookRequest {
+  string id = 1;
+}
+message BookList {}
+message BookResponse {
+  Book book = 1;
+}
+message BooksResponse {
+  repeated Book books = 1;
+}
+message BookCreateRequest {
+  Book book = 1;
+}
+message BookUpdateRequest {
+  Book book = 1;
+}
+message Empty {}
+
+message StudentRequest {
+  string id = 1;
+}
+message StudentList {}
+message StudentResponse {
+  Student student = 1;
+}
+message StudentsResponse {
+  repeated Student students = 1;
+}
+message StudentCreateRequest {
+  Student student = 1;
+}
+message StudentUpdateRequest {
+  Student student = 1;
+}
+
+message LoanRequest {
+  string id = 1;
+}
+message LoanList {}
+message LoanResponse {
+  Loan loan = 1;
+}
+message LoansResponse {
+  repeated Loan loans = 1;
+}
+message LoanCreateRequest {
+  string studentId = 1;
+  string bookId = 2;
+}
+message LoanReturnRequest {
+  string loanId = 1;
+}
+
+// SERVICES
+service BookService {
+  rpc ListBooks(BookList) returns (BooksResponse);
+  rpc GetBook(BookRequest) returns (BookResponse);
+  rpc CreateBook(BookCreateRequest) returns (BookResponse);
+  rpc UpdateBook(BookUpdateRequest) returns (BookResponse);
+  rpc DeleteBook(BookRequest) returns (Empty);
+}
+
+service StudentService {
+  rpc ListStudents(StudentList) returns (StudentsResponse);
+  rpc GetStudent(StudentRequest) returns (StudentResponse);
+  rpc CreateStudent(StudentCreateRequest) returns (StudentResponse);
+  rpc UpdateStudent(StudentUpdateRequest) returns (StudentResponse);
+  rpc DeleteStudent(StudentRequest) returns (Empty);
+}
+
+service LoanService {
+  rpc ListLoans(LoanList) returns (LoansResponse);
+  rpc GetLoan(LoanRequest) returns (LoanResponse);
+  rpc CreateLoan(LoanCreateRequest) returns (LoanResponse);
+  rpc ReturnLoan(LoanReturnRequest) returns (LoanResponse);
+}
