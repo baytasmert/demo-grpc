@@ -56,7 +56,7 @@ Dosya: [`grpcurl-tests.md`](https://github.com/baytasmert/demo-grpc/blob/main/gr
 
 ```bash
 # protobuf stub dosyalarını üretmek için:
-python -m grpc_tools.protoc -I=./src/proto --python_out=./src --grpc_python_out=./src ./src/proto/university.proto
+python -m grpc_tools.protoc -I. --python_out=./src --grpc_python_out=./src university.proto
 
 # Sunucuyu başlat:
 python src/server/server.py
