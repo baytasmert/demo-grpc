@@ -99,7 +99,7 @@ Detaylı grpcurl testleri ve ekran görüntüleri için [grpcurl-tests.md](./grp
 Markdown'da referanslama örneği:
 
 ```md
-![Kitap Listeleme](screenshots/list_books.png)
+![Kitap Listeleme](screenshots/listBooks.png)
 ```
 
 ---
